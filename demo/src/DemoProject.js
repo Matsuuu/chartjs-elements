@@ -35,9 +35,9 @@ export class DemoProject extends LitElement {
       <button @click=${this.__increment}>increment</button>
 
       <chart-js>
-          <chart-js-data label="Foo" background-color="#ff6d00" border-color="#FFFFFF" data="12"></chart-js-data>
-          <chart-js-data label="Bar" background-color="#5522FF" border-color="#FFFFFF" data="15"></chart-js-data>
-          <chart-js-data label="Baz" background-color="#99AA77" border-color="#FFFFFF" data="10"></chart-js-data>
+          <chart-js-data label="Foo" background-color="#ff6d0088" border-color="#ff6d00" data="12"></chart-js-data>
+          <chart-js-data label="Bar" background-color="#5522FF88" border-color="#5522FF" data="15"></chart-js-data>
+          <chart-js-data label="Baz" background-color="#99AA7788" border-color="#99AA77" data="10"></chart-js-data>
       </chart-js>
     `;
     }
