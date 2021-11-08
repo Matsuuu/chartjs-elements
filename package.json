@@ -1,0 +1,23 @@
+{
+  "name": "chartjs-elements",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/chart-js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matsuuu/chartjs-elements.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matsuuu/chartjs-elements/issues"
+  },
+  "homepage": "https://github.com/Matsuuu/chartjs-elements#readme",
+  "dependencies": {
+    "chart.js": "^3.6.0"
+  }
+}
