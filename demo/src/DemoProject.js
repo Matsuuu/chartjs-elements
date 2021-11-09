@@ -74,13 +74,20 @@ export class DemoProject extends LitElement {
             <button @click=${this.addDataset}>Add dataset</button>
 
             <div class="charts">
-                <chart-js type="bar">${this.chartData.map((cd, i) => this.renderDataset(cd, i))}</chart-js>
-                <chart-js type="line">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
-                <chart-js type="pie">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
-                <chart-js type="doughnut">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
-                <chart-js type="polarArea">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
-                <chart-js type="radar">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+                <chart-js type="bar">${this.renderChartChildren()}</chart-js>
+                <chart-js type="line">${this.renderChartChildren()}</chart-js>
+                <chart-js type="pie">${this.renderChartChildren()}</chart-js>
+                <chart-js type="doughnut">${this.renderChartChildren()}</chart-js>
+                <chart-js type="polarArea">${this.renderChartChildren()}</chart-js>
+                <chart-js type="radar">${this.renderChartChildren()}</chart-js>
             </div>
+        `;
+    }
+
+    renderChartChildren() {
+        return html` 
+            <chart-js-legend align="start"></chart-js-legend>
+            ${this.chartData.map((cd, i) => this.renderDataset(cd, i))} 
         `;
     }
 
