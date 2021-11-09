@@ -33,7 +33,7 @@ export class DemoProject extends LitElement {
 
     constructor() {
         super();
-        this.title = 'Hey there';
+        this.title = 'ChartJS Elements demos';
         this.counter = 5;
         this.chartData = [
             [
@@ -76,8 +76,6 @@ export class DemoProject extends LitElement {
             <div class="charts">
                 <chart-js type="bar">${this.chartData.map((cd, i) => this.renderDataset(cd, i))}</chart-js>
                 <chart-js type="line">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
-                <chart-js type="scatter">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
-                <chart-js type="bubble">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
                 <chart-js type="pie">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
                 <chart-js type="doughnut">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
                 <chart-js type="polarArea">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
