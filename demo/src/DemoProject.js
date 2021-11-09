@@ -9,6 +9,16 @@ export class DemoProject extends LitElement {
                 padding: 25px;
                 color: var(--demo-project-text-color, #000);
             }
+            .charts {
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .charts > * {
+                flex-basis: 30%;
+                margin-right: 2%;
+            }
         `;
     }
 
@@ -26,20 +36,10 @@ export class DemoProject extends LitElement {
         this.title = 'Hey there';
         this.counter = 5;
         this.chartData = [
-            { label: 'Foo', data: 12 },
-            { label: 'Bar', data: 15 },
-            { label: 'Baz', data: 10 },
-        ];
-        this.chartData = [
             [
                 { label: 'Foo', data: 12 },
                 { label: 'Bar', data: 15 },
                 { label: 'Baz', data: 10 },
-            ],
-            [
-                { label: 'Foo', data: 8 },
-                { label: 'Bar', data: 14 },
-                { label: 'Baz', data: 11 },
             ],
         ];
     }
@@ -73,25 +73,24 @@ export class DemoProject extends LitElement {
             <button @click=${this.addData}>Add data</button>
             <button @click=${this.addDataset}>Add dataset</button>
 
-            <chart-js label="Random data">
-                ${this.chartData.map(
-            (cd, i) => html`
-                        <chart-js-dataset label="Data ${i}">
-                            ${cd.map(d => html` <chart-js-data label=${d.label} data=${d.data}></chart-js-data> `)}
-                        </chart-js-dataset>
-                    `,
-        )}
-            </chart-js>
+            <div class="charts">
+                <chart-js type="bar">${this.chartData.map((cd, i) => this.renderDataset(cd, i))}</chart-js>
+                <chart-js type="line">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+                <chart-js type="scatter">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+                <chart-js type="bubble">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+                <chart-js type="pie">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+                <chart-js type="doughnut">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+                <chart-js type="polarArea">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+                <chart-js type="radar">${this.chartData.map((cd, i) => this.renderDataset(cd, i))} </chart-js>
+            </div>
+        `;
+    }
 
-            <chart-js type="line">
-                ${this.chartData.map(
-            (cd, i) => html`
-                        <chart-js-dataset label="Data ${i}">
-                            ${cd.map(d => html` <chart-js-data label=${d.label} data=${d.data}></chart-js-data> `)}
-                        </chart-js-dataset>
-                    `,
-        )}
-            </chart-js>
+    renderDataset(cd, i) {
+        return html`
+            <chart-js-dataset label="Data ${i}">
+                ${cd.map(d => html` <chart-js-data label=${d.label} data=${d.data}></chart-js-data> `)}
+            </chart-js-dataset>
         `;
     }
 }
