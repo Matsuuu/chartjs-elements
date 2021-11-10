@@ -62,6 +62,18 @@ export class DemoProject extends LitElement {
         this.chartData = [...this.chartData, data];
     }
 
+    removeData() {
+        this.chartData = this.chartData.map(cd => {
+            cd.pop();
+            return cd;
+        });
+    }
+
+    removeDataset() {
+        this.chartData.pop();
+        this.requestUpdate();
+    }
+
     rand() {
         return { label: 'New', data: Math.floor(Math.random() * 15 + 5) };
     }
@@ -72,6 +84,8 @@ export class DemoProject extends LitElement {
             <button @click=${this.__increment}>increment</button>
             <button @click=${this.addData}>Add data</button>
             <button @click=${this.addDataset}>Add dataset</button>
+            <button @click=${this.removeData}>Remove data</button>
+            <button @click=${this.removeDataset}>Remove dataset</button>
 
             <div class="charts">
                 <chart-js type="bar">${this.renderChartChildren()}</chart-js>
