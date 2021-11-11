@@ -100,7 +100,7 @@ export class DemoProject extends LitElement {
 
     renderChartChildren() {
         return html` 
-            <chart-js-legend align="start"></chart-js-legend>
+            <chart-js-legend title-text="FOO BAR BBOOO" align="start"></chart-js-legend>
             ${this.chartData.map((cd, i) => this.renderDataset(cd, i))} 
         `;
     }
