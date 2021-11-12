@@ -1,11 +1,12 @@
 {
   "name": "chartjs-elements",
-  "version": "0.0.1-1",
+  "version": "0.0.1-4",
   "description": "",
   "main": "lib/chart-js.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "demo": "cd demo && npm start"
+    "demo": "cd demo && npm start",
+    "example": "cd example && npm start"
   },
   "repository": {
     "type": "git",
