@@ -100,8 +100,8 @@ export class DemoProject extends LitElement {
 
     renderChartChildren() {
         return html` 
-            <chart-js-title text="Data chart #1" size="24"></chart-js-title>
-            <chart-js-title text="This is a data chart" size="18" subtitle></chart-js-title>
+            <chart-js-title text="Data chart #1" size="24" padding="5"></chart-js-title>
+            <chart-js-title text="This is a data chart" size="18" padding="0" subtitle></chart-js-title>
             <chart-js-legend align="start"></chart-js-legend>
             ${this.chartData.map((cd, i) => this.renderDataset(cd, i))} 
         `;
