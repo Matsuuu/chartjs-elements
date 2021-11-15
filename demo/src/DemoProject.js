@@ -16,7 +16,7 @@ export class DemoProject extends LitElement {
             }
 
             .charts > * {
-                flex-basis: 30%;
+                flex-basis: 48%;
                 margin-right: 2%;
             }
         `;
@@ -90,6 +90,7 @@ export class DemoProject extends LitElement {
             <div class="charts">
                 <chart-js type="bar">${this.renderChartChildren()}</chart-js>
                 <chart-js type="line">${this.renderChartChildren()}</chart-js>
+                ${this.renderCombinationChart()}
                 <chart-js type="pie">${this.renderChartChildren()}</chart-js>
                 <chart-js type="doughnut">${this.renderChartChildren()}</chart-js>
                 <chart-js type="polarArea">${this.renderChartChildren()}</chart-js>
@@ -105,6 +106,26 @@ export class DemoProject extends LitElement {
             <chart-js-legend align="start"></chart-js-legend>
             ${this.chartData.map((cd, i) => this.renderDataset(cd, i))} 
         `;
+    }
+
+    renderCombinationChart() {
+        return html`
+            <chart-js type="bar">
+                <chart-js-title text="This is a combination chart" size="24" padding="5"></chart-js-title>
+                <chart-js-dataset label="Data bar" type="bar">
+                    <chart-js-data label="January" data="10"></chart-js-data>
+                    <chart-js-data label="February" data="20"></chart-js-data>
+                    <chart-js-data label="March" data="30"></chart-js-data>
+                    <chart-js-data label="April" data="40"></chart-js-data>
+                </chart-js-dataset>
+                <chart-js-dataset label="Data line" type="line">
+                    <chart-js-data label="January" data="12"></chart-js-data>
+                    <chart-js-data label="February" data="18"></chart-js-data>
+                    <chart-js-data label="March" data="28"></chart-js-data>
+                    <chart-js-data label="April" data="41"></chart-js-data>
+                </chart-js-dataset>
+            </chart-js>
+        `
     }
 
     renderDataset(cd, i) {
