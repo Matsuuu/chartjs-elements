@@ -57,7 +57,7 @@ export class DemoProject extends LitElement {
     addDataset() {
         const data = [];
         for (let i = 0; i < this.chartData[0].length; i++) {
-            const randData = this.rand()
+            const randData = this.rand();
             randData.label = this.chartData[0][i].label;
             data.push(randData);
         }
@@ -90,7 +90,12 @@ export class DemoProject extends LitElement {
             <button @click=${this.removeDataset}>Remove dataset</button>
 
             <div class="charts">
-                <chart-js type="bar">${this.renderChartChildren()}</chart-js>
+                <chart-js type="bar"> ${this.renderChartChildren()} </chart-js>
+                <chart-js type="bar">
+                    ${this.renderChartChildren()}
+                    <chart-js-scale type="x" stacked></chart-js-scale>
+                    <chart-js-scale type="y" stacked></chart-js-scale>
+                </chart-js>
                 <chart-js type="bar" index-axis="y">${this.renderChartChildren()}</chart-js>
                 <chart-js type="line">${this.renderChartChildren()}</chart-js>
                 <chart-js type="pie">${this.renderChartChildren()}</chart-js>
