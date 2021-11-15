@@ -16,7 +16,7 @@ export class DemoProject extends LitElement {
             }
 
             .charts > * {
-                flex-basis: 48%;
+                flex-basis: 20%;
                 margin-right: 2%;
             }
         `;

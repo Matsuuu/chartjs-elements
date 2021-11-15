@@ -1,6 +1,6 @@
 {
   "name": "chartjs-elements",
-  "version": "0.0.1-4",
+  "version": "0.0.1-5",
   "description": "",
   "main": "lib/chart-js.js",
   "scripts": {
