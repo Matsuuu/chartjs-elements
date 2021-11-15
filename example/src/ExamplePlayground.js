@@ -65,7 +65,6 @@ export class ExamplePlayground extends LitElement {
 {
   "dependencies": {
     "chartjs-elements": "${CHARTJS_VERSION}",
-    "chart.js": "3.6.0"
   }
 }
 
@@ -107,8 +106,7 @@ export class ExamplePlayground extends LitElement {
                     <script type="sample/json" filename="package.json">
 {
   "dependencies": {
-    "chartjs-elements": "${CHARTJS_VERSION}",
-    "chart.js": "3.6.0"
+    "chartjs-elements": "${CHARTJS_VERSION}"
   }
 }
 
@@ -143,8 +141,7 @@ export class ExamplePlayground extends LitElement {
                     <script type="sample/json" filename="package.json">
 {
   "dependencies": {
-    "chartjs-elements": "${CHARTJS_VERSION}",
-    "chart.js": "3.6.0"
+    "chartjs-elements": "${CHARTJS_VERSION}"
   }
 }
 
@@ -192,8 +189,7 @@ export class ExamplePlayground extends LitElement {
                     <script type="sample/json" filename="package.json">
 {
   "dependencies": {
-    "chartjs-elements": "${CHARTJS_VERSION}",
-    "chart.js": "3.6.0"
+    "chartjs-elements": "${CHARTJS_VERSION}"
   }
 }
 
@@ -249,8 +245,7 @@ export class ExamplePlayground extends LitElement {
                     <script type="sample/json" filename="package.json">
 {
   "dependencies": {
-    "chartjs-elements": "${CHARTJS_VERSION}",
-    "chart.js": "3.6.0"
+    "chartjs-elements": "${CHARTJS_VERSION}"
   }
 }
 
@@ -297,8 +292,7 @@ export class ExamplePlayground extends LitElement {
                     <script type="sample/json" filename="package.json">
 {
   "dependencies": {
-    "chartjs-elements": "${CHARTJS_VERSION}",
-    "chart.js": "3.6.0"
+    "chartjs-elements": "${CHARTJS_VERSION}"
   }
 }
 
