@@ -57,7 +57,9 @@ export class DemoProject extends LitElement {
     addDataset() {
         const data = [];
         for (let i = 0; i < this.chartData[0].length; i++) {
-            data.push(this.rand());
+            const randData = this.rand()
+            randData.label = this.chartData[0][i].label;
+            data.push(randData);
         }
         this.chartData = [...this.chartData, data];
     }
@@ -89,22 +91,23 @@ export class DemoProject extends LitElement {
 
             <div class="charts">
                 <chart-js type="bar">${this.renderChartChildren()}</chart-js>
+                <chart-js type="bar" index-axis="y">${this.renderChartChildren()}</chart-js>
                 <chart-js type="line">${this.renderChartChildren()}</chart-js>
-                ${this.renderCombinationChart()}
                 <chart-js type="pie">${this.renderChartChildren()}</chart-js>
                 <chart-js type="doughnut">${this.renderChartChildren()}</chart-js>
                 <chart-js type="polarArea">${this.renderChartChildren()}</chart-js>
                 <chart-js type="radar">${this.renderChartChildren()}</chart-js>
+                ${this.renderCombinationChart()}
             </div>
         `;
     }
 
     renderChartChildren() {
-        return html` 
+        return html`
             <chart-js-title text="Data chart #1" size="24" padding="5"></chart-js-title>
             <chart-js-title text="This is a data chart" size="18" padding="0" subtitle></chart-js-title>
             <chart-js-legend align="start"></chart-js-legend>
-            ${this.chartData.map((cd, i) => this.renderDataset(cd, i))} 
+            ${this.chartData.map((cd, i) => this.renderDataset(cd, i))}
         `;
     }
 
@@ -125,12 +128,12 @@ export class DemoProject extends LitElement {
                     <chart-js-data label="April" data="41"></chart-js-data>
                 </chart-js-dataset>
             </chart-js>
-        `
+        `;
     }
 
     renderDataset(cd, i) {
         return html`
-            <chart-js-dataset label="Data ${i}">
+            <chart-js-dataset label="Dataset ${i}">
                 ${cd.map(d => html` <chart-js-data label=${d.label} data=${d.data}></chart-js-data> `)}
             </chart-js-dataset>
         `;
