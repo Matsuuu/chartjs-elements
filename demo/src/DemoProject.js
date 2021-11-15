@@ -93,8 +93,12 @@ export class DemoProject extends LitElement {
                 <chart-js type="bar"> ${this.renderChartChildren()} </chart-js>
                 <chart-js type="bar">
                     ${this.renderChartChildren()}
-                    <chart-js-scale type="x" stacked></chart-js-scale>
-                    <chart-js-scale type="y" stacked></chart-js-scale>
+                    <chart-js-scale name="x" stacked></chart-js-scale>
+                    <chart-js-scale name="y" stacked></chart-js-scale>
+                </chart-js>
+                <chart-js type="bar">
+                    ${this.renderChartChildren()}
+                    <chart-js-scale name="y" max="50"></chart-js-scale>
                 </chart-js>
                 <chart-js type="bar" index-axis="y">${this.renderChartChildren()}</chart-js>
                 <chart-js type="line">${this.renderChartChildren()}</chart-js>
